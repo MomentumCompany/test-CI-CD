@@ -1,0 +1,22 @@
+{
+  "type": "postgres",
+  "url": "\npostgres://klvyojfynyuxnk:f2f35b06376a0c22f9bceecf8d2ea8e0ccf3fd8b8c57a13fdaf9f75169ab7b78@ec2-3-223-21-106.compute-1.amazonaws.com:5432/d34po12q9etrb2",
+  "synchronize": true,
+  "logging": false,
+  "ssl": true,
+  "rejectUnauthorized": false,
+  "entities": [
+    "src/entity/**/*.ts"
+  ],
+  "migrations": [
+    "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+    "src/subscriber/**/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
