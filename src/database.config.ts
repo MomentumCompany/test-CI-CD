@@ -3,7 +3,7 @@ import { environment } from './environment';
 
 export const databaseConfig:TypeOrmModuleOptions = {
   type: 'postgres',
-  url: process.env.DATABASE_URL || environment.url,
+  url: environment.url,
   synchronize: true,
   logging: false,
   ssl: {
