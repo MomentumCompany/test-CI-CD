@@ -1,4 +1,4 @@
-import {Periodicity} from "../entity/enums";
+import {Periodicity} from './enums';
 
 export class PeriodicityCalculator {
     static calculateTimePeriod(periocicity: Periodicity, startDate: Date): Date {
