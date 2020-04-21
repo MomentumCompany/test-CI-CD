@@ -1,32 +1,18 @@
 version: 2.1
-orbs:
-  node: circleci/node@1.1.6
 jobs:
-  deploy-prod:
-    docker:
-    - image: circleci/node:12.16.2
-    steps:
-      - checkout
-      - run: ssh -oStrictHostKeyChecking=no -v $DROPLET_USER@$DROPLET_IP
-      - run:
-             name: navigate directory root 
-             command: cd ..
-      - run: 
-             name: navigate directory
-             command: cd /var/www/html/lostAndFound_Backend
-      - run:
-             name: git 
-             command: git pull origin master
-      - run:
-             name: buil
-             command: npm run build
+    build:
+        docker:
+            - image: circleci/node:7
+        steps:
+            - checkout
+            - run:
+                name: install-dependencies
+                command: npm install
+            - run:
+                name: tests
+                command: npm test
+            - deploy:
+                name: digital-ocean
+                command: ssh -o "StrictHostKeyChecking no" $DROPLET_USER@$DROPLET_IP "cd /var/www/html/lostAndFound_Backend; git pull; npm install; npm run build;"    
+
       
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - deploy-prod:
-          filters:
-            branches:
-              only:
-                - master
