@@ -10,7 +10,7 @@ jobs:
                 command: npm install
             - deploy:
                 name: digital-ocean
-                command: ssh -o "StrictHostKeyChecking no" $DROPLET_USER@$DROPLET_IP "cd /var/www/html/lostAndFound_Backend; git pull; npm install; npm run build;" 
+                command: ssh -o "StrictHostKeyChecking no" $DROPLET_USER@$DROPLET_IP "cd /var/www/html/lostAndFound_Backend; git pull origin circleci-project-setup; npm install; npm run build;" 
                 
 
       
