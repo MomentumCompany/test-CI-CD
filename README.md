@@ -51,7 +51,6 @@ $ npm run start:prod
 
 ```bash
 # unit tests
-$ npm run test
 
 
 
