@@ -68,6 +68,4 @@ $ npm run test:cov
 - Website - [https://nestjs.com](https://nestjs.com/)
 - Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
-
 
