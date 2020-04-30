@@ -15,4 +15,11 @@ export enum Periodicity {
     halfYearly,
     annually,
 }
+
 export type planType = SubscriptionPlanType;
+
+export enum PaymentStatus{
+    pending,
+    successful,
+    failed
+}

@@ -47,4 +47,5 @@ export class User extends BaseEntity {
   @OneToOne(type => SubscriptionPlan)
   @JoinColumn()
   subscriptionPlan: SubscriptionPlan
+
 }

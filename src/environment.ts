@@ -1,4 +1,6 @@
 export const environment = {
-  url: '\npostgres://klvyojfynyuxnk:f2f35b06376a0c22f9bceecf8d2ea8e0ccf3fd8b8c57a13fdaf9f75169ab7b78@ec2-3-223-21-106.compute-1.amazonaws.com:5432/d34po12q9etrb2',
+  url: 'postgresql://doadmin:w1zcokv3ysjt7ukc@momentum-db-do-user-7390236-0.a.db.ondigitalocean.com:25060/momentum_beta',
   jwtKey: 'bnhbx8miuhjiop348yuxjp,-0o12HNUX2R7TNT3N8YCT35GNXV3UIJIPV,U384THZGNC3MMJH7y83cthc3ny7ah 88xh8',
+  razorSecretKey: 'lGsTXGY1fabBSmSuU7e3t2xm',
+  razorKeyId: 'rzp_test_YARJvZXjByvVZo',
 };

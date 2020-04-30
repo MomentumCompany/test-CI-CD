@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { TypeOrmCoreModule } from '@nestjs/typeorm/dist/typeorm-core.module';
 import { databaseConfig } from './database.config';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
-  imports: [UserModule, TypeOrmCoreModule.forRoot(databaseConfig)],
+  imports: [UserModule, TypeOrmCoreModule.forRoot(databaseConfig), PaymentModule],
   controllers: [AppController],
   providers: [AppService],
 })

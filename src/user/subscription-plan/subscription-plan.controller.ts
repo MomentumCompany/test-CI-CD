@@ -3,10 +3,11 @@ import { SubscriptionPlanService } from '../../services/subscription-plan/subscr
 
 @Controller('subscription-plan')
 export class SubscriptionPlanController {
-  constructor(private  readonly subscriptionPlsanService:SubscriptionPlanService) {
+  constructor(private readonly subscriptionPlsanService: SubscriptionPlanService) {
   }
+
   @Get(':userId')
-  getUserSubscription(@Param('userId') userId: string): Promise<any> {
-return;
+  getUserSubscription(@Param('userId') userId: number): Promise<any> {
+    return this.subscriptionPlsanService.getSubscriptionByUser(userId);
   }
 }
