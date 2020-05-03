@@ -44,14 +44,6 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-
-
-
-
-## Stay in touch
 
 
 
