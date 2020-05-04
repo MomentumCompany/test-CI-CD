@@ -43,5 +43,3 @@ $ npm run start:prod
 ```
 
 
-
-dkkdk
