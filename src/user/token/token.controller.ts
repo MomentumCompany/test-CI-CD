@@ -10,7 +10,7 @@ export class TokenController {
   constructor(private readonly tokenService: TokenService) {
   }
 
-  @Post('create/:userId')
+  @Post('add/:userId')
   generateToken(@Param('userId') userId: number, @Body() body: TokenCreateBody): Promise<any> {
     return this.tokenService.generateToken(userId, body.token);
   }

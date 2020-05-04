@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { SubscriptionPlanRepository } from '../../repositories/subscriptionPlanRepository';
 import { UserRepositoy } from '../../repositories/userRepositoy';
+import { User } from '../../models/user.entity';
 
 @Injectable()
 export class SubscriptionPlanService {

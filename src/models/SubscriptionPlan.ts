@@ -17,8 +17,7 @@ export class SubscriptionPlan extends BaseEntity {
 
   @Column()
   endDate: Date;
-
-  @OneToOne(type => User, user => user.subscriptionPlan)
-  user: User;
+  @OneToOne(type => User, User => User.id)
+  userId: number;
 
 }

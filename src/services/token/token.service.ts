@@ -2,21 +2,22 @@ import { Injectable } from '@nestjs/common';
 import { APITokenRepository } from '../../repositories/APITokenRepository';
 import { APITokens } from '../../models/API_Tokens';
 import * as moment from 'moment';
-import { SubscriptionHelper } from '../../pipes/SubscriptionHelper';
-import { SubscriptionPlanType } from '../../pipes/enums';
+import { SubscriptionPlanService } from '../subscription-plan/subscription-plan.service';
+import { SubscriptionPlan } from '../../models/SubscriptionPlan';
 
 @Injectable()
 export class TokenService {
-  constructor(private readonly tokenRepository: APITokenRepository) {
+  constructor(private readonly tokenRepository: APITokenRepository, private readonly subscriptionService:SubscriptionPlanService) {
   }
 
-  generateToken(userId: number, key: string): Promise<any> {
+ async generateToken(userId: number, key: string): Promise<any> {
     const token = new APITokens();
     token.userId = userId;
     token.startDate = moment.utc().toDate();
     token.token = key;
-
-
+    const responseObj = await this.subscriptionService.getSubscriptionByUser(userId);
+    const subscriptionOfUser :SubscriptionPlan = responseObj[0].subscriptionPlan;
+    token.expiryDate = subscriptionOfUser.endDate;
     return this.tokenRepository.save(token);
   }
 }

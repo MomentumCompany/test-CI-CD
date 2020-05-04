@@ -55,7 +55,7 @@ export class UsersService {
     currentUser.password = hash;
     currentUser.role = UserRoles.organisationalAdmins;
     const subscriptionHelper = new SubscriptionHelper(moment.utc().toDate(), parseInt(subscriptionPlanId, 0));
-    const subscription = subscriptionHelper.selectSubscription(currentUser);
+    const subscription = subscriptionHelper.selectSubscription(currentUser.id);
     await this.subscriptionRepository.save(subscription);
     currentUser.subscriptionPlan = subscription;
     return this.userRepositoy.save(currentUser);
