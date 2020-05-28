@@ -32,7 +32,7 @@ $ npm install
 ```
 
 ```bash
-# development
+# developmentmfmf;ldg
 $ npm run start
 
 # watch mode
