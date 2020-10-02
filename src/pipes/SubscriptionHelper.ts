@@ -1,6 +1,6 @@
-import {Periodicity, planType, SubscriptionPlanType} from "../entity/enums";
+import {Periodicity, planType, SubscriptionPlanType} from "./enums";
 import {PeriodicityCalculator} from "./PeriodicityCalculator";
-import {SubscriptionPlan} from "../entity/SubscriptionPlan";
+import {SubscriptionPlan} from "../models/SubscriptionPlan";
 
 export class SubscriptionHelper {
     private readonly date: Date;

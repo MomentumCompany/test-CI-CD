@@ -1,6 +1,6 @@
 import {BaseEntity} from "./BaseEntity";
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from "typeorm";
-import {SubscriptionPlanType} from "./enums";
+import {SubscriptionPlanType} from "../pipes/enums";
 import {DateUtils} from "typeorm/util/DateUtils";
 
 @Entity()
